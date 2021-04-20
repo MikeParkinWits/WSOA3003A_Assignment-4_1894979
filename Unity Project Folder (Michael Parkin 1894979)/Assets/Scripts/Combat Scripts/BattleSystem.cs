@@ -1105,6 +1105,8 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
+            PlayerPrefs.SetInt("LosingStreak", 0);
+
             int coinsWon = (enemyUnit.Length * 15 + UnityEngine.Random.Range(0, 6));
             dialogueText.text = "YOU HAVE WON! \n" + "You received " + coinsWon + " coins!";
 
@@ -1121,8 +1123,37 @@ public class BattleSystem : MonoBehaviour
         }
         else if (state == BattleState.LOST)
         {
-            int coinsLost = (playerUnit.Length * 5 + UnityEngine.Random.Range(-2, 2));
+
+            int losingStreak;
+
+            losingStreak = PlayerPrefs.GetInt("LosingStreak") + 1;
+            PlayerPrefs.SetInt("LosingStreak", losingStreak);
+
+            int coinsLost = 0;
+
+            if (PlayerPrefs.GetInt("LosingStreak") == 0)
+            {
+                coinsLost = (playerUnit.Length * 5 + UnityEngine.Random.Range(-2, 2));
+            }
+            else if (PlayerPrefs.GetInt("LosingStreak") == 1)
+            {
+                coinsLost = (playerUnit.Length * 5 + UnityEngine.Random.Range(-2, 2));
+            }
+            else if (PlayerPrefs.GetInt("LosingStreak") == 2)
+            {
+                coinsLost = (playerUnit.Length * 4 + UnityEngine.Random.Range(-1, 2));
+            }
+            else if (PlayerPrefs.GetInt("LosingStreak") >= 3)
+            {
+                coinsLost = (playerUnit.Length * 3 + UnityEngine.Random.Range(0, 1));
+
+
+            }
+
             dialogueText.text = "You have been defeated... \n" + "You lost " + coinsLost + " coins...\n" + "You should visit the dojo for training";
+
+            int totalCoins = PlayerPrefs.GetInt("TotalCoins") - coinsLost;
+            PlayerPrefs.SetInt("TotalCoins", totalCoins);
 
             AudioManager.loseAudio.Play();
         }
