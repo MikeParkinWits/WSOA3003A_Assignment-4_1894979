@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Test Menu.unity
+    guid: eaf9f7cb8b016c04ca6d04cc13de2752
+  - enabled: 1
+    path: Assets/Scenes/Tutorial World.unity
+    guid: eb8f81d28006233408f080abeff73435
+  - enabled: 1
+    path: Assets/Scenes/Scenes/DojoScene.unity
+    guid: 6cb5e6049b8a54c4a8401917ad332b77
+  - enabled: 1
+    path: Assets/Scenes/BattleScene.unity
+    guid: a0fb93ff0b8930344a88b01dc90c2dcf
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/BattleScene 1v1.unity
+    guid: f3fbc1afdd17a474b96cae598e93b6cb
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/BattleScene 2v1.unity
+    guid: 3f61274b8d00dd840bba70632c6086c6
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/BattleScene 2v2.unity
+    guid: fc8893378cfaeda43bbf0c3603f03959
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 3 Battle 1.unity
+    guid: 0f1ce232286a7174ab7d4ae3b73396f7
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 4 Battle 1.unity
+    guid: 7c0aa3ae0ab248a4a833ab4b5db30e19
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 5 Battle 1.unity
+    guid: 8157a704e6248164f826ec1b560fa040
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 11 Battle 1.unity
+    guid: cf1f4439c09e16649937197dc95cc3f2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 7 Battle 1.unity
+    guid: cbc9b705aa9ea0a4e94381d9fb6345b4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 9 Battle 1.unity
+    guid: e1f37930e9c18e74f83cd3c4ee9aefeb
+  - enabled: 1
+    path: Assets/Scenes/Levels/Boss Battle 1.unity
+    guid: 1c9f65b0e50c17047a6640a1afe9d51f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Boss Battle 2.unity
+    guid: c0611a506402d2d428b7ac2090a4ccbc
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Winner Scene.unity
+    guid: a5304786c2474f4429bda9b92b8c6f0c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 3 Battle 2.unity
+    guid: c519893134b74c54888432d7be4e1755
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 4 Battle 2.unity
+    guid: 9dc89c512c9097346bed909837382f8c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 5 Battle 2.unity
+    guid: f4671b76f75e1b440a45761e7bf32831
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 7 Battle 2.unity
+    guid: e135bc33f48b20045bc911f193a283d4
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 9 Battle 2.unity
+    guid: 05243e9a4469e0845be768c634cb6192
+  - enabled: 1
+    path: Assets/Scenes/Levels/Point 11 Battle 2.unity
+    guid: e018986a749322c4a94a4543a61c6443
+  m_configObjects: {}
