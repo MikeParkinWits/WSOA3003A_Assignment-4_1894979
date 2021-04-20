@@ -1107,13 +1107,37 @@ public class BattleSystem : MonoBehaviour
         {
             PlayerPrefs.SetInt("LosingStreak", 0);
 
-            int coinsWon = (enemyUnit.Length * 15 + UnityEngine.Random.Range(0, 6));
+            int winningStreak;
+
+            winningStreak = PlayerPrefs.GetInt("WinningStreak") + 1;
+            PlayerPrefs.SetInt("WinningStreak", winningStreak);
+
+            int coinsWon = 0;
+
+            if (PlayerPrefs.GetInt("WinningStreak") == 0)
+            {
+                coinsWon = (enemyUnit.Length * 15 + UnityEngine.Random.Range(0, 6));
+            }
+            else if (PlayerPrefs.GetInt("WinningStreak") == 1)
+            {
+                coinsWon = (enemyUnit.Length * 14 + UnityEngine.Random.Range(0, 5));
+            }
+            else if (PlayerPrefs.GetInt("WinningStreak") == 2)
+            {
+                coinsWon = (enemyUnit.Length * 12 + UnityEngine.Random.Range(0, 5));
+            }
+            else if (PlayerPrefs.GetInt("WinningStreak") >= 3)
+            {
+                coinsWon = (enemyUnit.Length * 10 + UnityEngine.Random.Range(0, 5));
+            }
+
             dialogueText.text = "YOU HAVE WON! \n" + "You received " + coinsWon + " coins!";
 
             int totalCoins = PlayerPrefs.GetInt("TotalCoins") + coinsWon;
             PlayerPrefs.SetInt("TotalCoins", totalCoins);
 
             AudioManager.winAudio.Play();
+            AudioManager.backgroundAudio.Stop();
 
             if (SceneManager.GetActiveScene().name == "Boss Battle 1" || SceneManager.GetActiveScene().name == "Boss Battle 2")
             {
@@ -1145,9 +1169,7 @@ public class BattleSystem : MonoBehaviour
             }
             else if (PlayerPrefs.GetInt("LosingStreak") >= 3)
             {
-                coinsLost = (playerUnit.Length * 3 + UnityEngine.Random.Range(0, 1));
-
-
+                coinsLost = (playerUnit.Length * 2 + UnityEngine.Random.Range(0, 2));
             }
 
             dialogueText.text = "You have been defeated... \n" + "You lost " + coinsLost + " coins...\n" + "You should visit the dojo for training";
