@@ -156,6 +156,11 @@ public class CharacterMovementLevel : MonoBehaviour
                 battleSceneChance = 0.65f;
                 coinChance = 0.75f;
             }
+            else if (PlayerPrefs.GetInt("WinningStreak") >= 5)
+            {
+                battleSceneChance = 0.7f;
+                coinChance = 0.8f;
+            }
 
 
             if (chance <= battleSceneChance && PlayerPrefs.GetInt("Just Battled") != 1)

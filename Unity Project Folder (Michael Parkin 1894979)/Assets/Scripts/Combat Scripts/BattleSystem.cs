@@ -116,6 +116,8 @@ public class BattleSystem : MonoBehaviour
 
         //actionsUI.SetActive(false);
 
+        PlayerPrefs.SetInt("SpecialStreak", 0);
+
         hasStarPos = false;
 
         state = BattleState.START;
@@ -241,7 +243,9 @@ public class BattleSystem : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+
                     specialInputAchieved = true;
+                    PlayerPrefs.SetInt("SpecialBonusAchieved", 1);
                 }
             }
 
@@ -738,10 +742,27 @@ public class BattleSystem : MonoBehaviour
 
 
         specialInputAchieved = false;
+        PlayerPrefs.SetInt("SpecialBonusAchieved", 0);
+
         specialAllowed = true;
 
+        int specialStreakBonus = 0;
+
+        if (PlayerPrefs.GetInt("SpecialStreak") == 0)
+        {
+            specialStreakBonus = 0;
+        }
+        else if (PlayerPrefs.GetInt("SpecialStreak") == 1)
+        {
+            specialStreakBonus = 2;
+        }
+        else if (PlayerPrefs.GetInt("SpecialStreak") >= 3)
+        {
+            specialStreakBonus = 4;
+        }
+
         damageCalculated = (currentAttackDamage + playerUnit[currentPlayerNum].attackPower + UnityEngine.Random.Range(-2, 2)) - enemyUnit[0].defensePower;
-        damageCalculatedFloat = damageCalculated * specialMoveMultiplier;
+        damageCalculatedFloat = (damageCalculated * specialMoveMultiplier) - specialStreakBonus;
         damageCalculated = (int) damageCalculatedFloat;
 
         if (UnityEngine.Random.Range(0f, 10f/specialAccuracyBuffer) <= currentAccuracy)
@@ -1012,6 +1033,8 @@ public class BattleSystem : MonoBehaviour
         }
 
         specialInputAchieved = false;
+        PlayerPrefs.SetInt("SpecialBonusAchieved", 0);
+
         specialAllowed = true;
 
         damageCalculated = (currentAttackDamage + enemyUnit[currentEnemyNum].attackPower + UnityEngine.Random.Range(-2, 2)) - playerUnit[num].defensePower;
@@ -1443,10 +1466,27 @@ public class BattleSystem : MonoBehaviour
         //Debug.Log("Special: " + specialInputAchieved);
 
         specialInputAchieved = false;
+        PlayerPrefs.SetInt("SpecialBonusAchieved", 0);
+
         specialAllowed = true;
 
+        int specialStreakBonus = 0;
+
+        if (PlayerPrefs.GetInt("SpecialStreak") == 0)
+        {
+            specialStreakBonus = 0;
+        }
+        else if (PlayerPrefs.GetInt("SpecialStreak") == 1)
+        {
+            specialStreakBonus = 2;
+        }
+        else if (PlayerPrefs.GetInt("SpecialStreak") >= 3)
+        {
+            specialStreakBonus = 4;
+        }
+
         damageCalculated = (currentAttackDamage + playerUnit[currentPlayerNum].attackPower + UnityEngine.Random.Range(-2, 2)) - enemyUnit[enemyAlive].defensePower;
-        damageCalculatedFloat = damageCalculated * specialMoveMultiplier;
+        damageCalculatedFloat = (damageCalculated * specialMoveMultiplier) - specialStreakBonus;
         damageCalculated = (int)damageCalculatedFloat;
 
 
@@ -1731,10 +1771,27 @@ public class BattleSystem : MonoBehaviour
         //Debug.Log("Special: " + specialInputAchieved);
 
         specialInputAchieved = false;
+        PlayerPrefs.SetInt("SpecialBonusAchieved", 0);
+
         specialAllowed = true;
 
+        int specialStreakBonus = 0;
+
+        if (PlayerPrefs.GetInt("SpecialStreak") == 0)
+        {
+            specialStreakBonus = 0;
+        }
+        else if (PlayerPrefs.GetInt("SpecialStreak") == 1)
+        {
+            specialStreakBonus = 2;
+        }
+        else if (PlayerPrefs.GetInt("SpecialStreak") >= 3)
+        {
+            specialStreakBonus = 4;
+        }
+
         damageCalculated = (currentAttackDamage + playerUnit[currentPlayerNum].attackPower + UnityEngine.Random.Range(-2, 2)) - enemyUnit[enemyAttackSelection].defensePower;
-        damageCalculatedFloat = damageCalculated * specialMoveMultiplier;
+        damageCalculatedFloat = (damageCalculated * specialMoveMultiplier) - specialStreakBonus;
         damageCalculated = (int)damageCalculatedFloat;
 
 
