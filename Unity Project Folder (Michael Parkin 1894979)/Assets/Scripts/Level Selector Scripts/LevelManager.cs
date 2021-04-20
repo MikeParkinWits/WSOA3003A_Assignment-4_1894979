@@ -11,13 +11,44 @@ public class LevelManager : MonoBehaviour
     public LevelLocationsScript pointToSpawn;
     public Text currentLevelText;
 
-    // Start is called before the first frame update
-    void Awake()
+	public GameObject levelTwoLockConnection;
+	public GameObject levelSixLockConnection;
+	public GameObject levelTenLockConnection;
+
+	// Start is called before the first frame update
+	void Awake()
     {
 		pointToSpawn = GameObject.Find(PlayerPrefs.GetString("Spawn Point")).GetComponent<LevelLocationsScript>();
 		mainCharacter.Instantiate(this, pointToSpawn);
 
 		Time.timeScale = 1;
+
+		if (PlayerPrefs.GetInt("Point 2 Locked") == 1)
+		{
+			levelTwoLockConnection.SetActive(false);
+		}
+		else if (PlayerPrefs.GetInt("Point 2 Locked") == 0)
+		{
+			levelTwoLockConnection.SetActive(true);
+		}
+
+		if (PlayerPrefs.GetInt("Point 6 Locked") == 1)
+		{
+			levelSixLockConnection.SetActive(false);
+		}
+		else if(PlayerPrefs.GetInt("Point 6 Locked") == 0)
+		{
+			levelSixLockConnection.SetActive(true);
+		}
+
+		if (PlayerPrefs.GetInt("Point 10 Locked") == 1)
+		{
+			levelTenLockConnection.SetActive(false);
+		}
+		else if (PlayerPrefs.GetInt("Point 10 Locked") == 0)
+		{
+			levelTenLockConnection.SetActive(true);
+		}
 	}
 
 	// Update is called once per frame

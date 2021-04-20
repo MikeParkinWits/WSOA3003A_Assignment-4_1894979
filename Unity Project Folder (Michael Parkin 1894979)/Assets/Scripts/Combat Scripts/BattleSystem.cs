@@ -1167,6 +1167,26 @@ public class BattleSystem : MonoBehaviour
                 SceneManager.LoadScene("Winner Scene");
             }
 
+            if (SceneManager.GetActiveScene().name == "Point 3 Battle 1" || SceneManager.GetActiveScene().name == "Point 3 Battle 2")
+            {
+                PlayerPrefs.SetInt("Point 2 Locked", 0);
+            }
+
+            if (SceneManager.GetActiveScene().name == "Point 3 Battle 1" || SceneManager.GetActiveScene().name == "Point 3 Battle 2")
+            {
+                PlayerPrefs.SetInt("Point 2 Locked", 0);
+            }
+
+            if (SceneManager.GetActiveScene().name == "Point 11 Battle 1" || SceneManager.GetActiveScene().name == "Point 11 Battle 2")
+            {
+                PlayerPrefs.SetInt("Point 6 Locked", 0);
+            }
+
+            if (SceneManager.GetActiveScene().name == "Point 9 Battle 1" || SceneManager.GetActiveScene().name == "Point 9 Battle 2")
+            {
+                PlayerPrefs.SetInt("Point 10 Locked", 0);
+            }
+
         }
         else if (state == BattleState.LOST)
         {

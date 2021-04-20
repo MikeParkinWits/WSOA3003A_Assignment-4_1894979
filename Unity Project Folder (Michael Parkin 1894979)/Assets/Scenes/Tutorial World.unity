@@ -1679,6 +1679,9 @@ MonoBehaviour:
   mainCharacter: {fileID: 800745617}
   pointToSpawn: {fileID: 1426657412}
   currentLevelText: {fileID: 583790973}
+  levelTwoLockConnection: {fileID: 2055991043}
+  levelSixLockConnection: {fileID: 1624401516}
+  levelTenLockConnection: {fileID: 1204726816}
 --- !u!4 &748481152
 Transform:
   m_ObjectHideFlags: 0
@@ -4370,7 +4373,7 @@ MonoBehaviour:
   sceneToLoad: BattleScene
   sceneToLoadTwoPlayers: 
   locationName: 
-  isLocked: 0
+  isLocked: 1
   hasDialogue: 0
   hasDialogueButtons: 0
   onlyTreasure: 0

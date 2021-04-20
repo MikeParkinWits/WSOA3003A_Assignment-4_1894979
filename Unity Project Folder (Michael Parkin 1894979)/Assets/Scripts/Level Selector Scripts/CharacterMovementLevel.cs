@@ -84,10 +84,8 @@ public class CharacterMovementLevel : MonoBehaviour
 
         float chance = UnityEngine.Random.Range(0f, 1f);
 
-        if (currentPoint.name == "Point 3" && PlayerPrefs.GetInt("Point 3 Done") == 0)
+        if (currentPoint.name == "Point 3" && PlayerPrefs.GetInt("Point 2 Locked") == 1 && PlayerPrefs.GetInt("Just Battled") != 1)
         {
-
-            PlayerPrefs.SetInt("Point 3 Done", 1);
 
             if (PlayerPrefs.GetInt("New Partner Gained") == 0)
             {
@@ -99,10 +97,8 @@ public class CharacterMovementLevel : MonoBehaviour
             }
         }
 
-        else if (currentPoint.name == "Point 11" && PlayerPrefs.GetInt("Point 11 Done") == 0)
+        else if (currentPoint.name == "Point 11" && PlayerPrefs.GetInt("Point 6 Locked") == 1 && PlayerPrefs.GetInt("Just Battled") != 1)
         {
-
-            PlayerPrefs.SetInt("Point 11 Done", 1);
 
             if (PlayerPrefs.GetInt("New Partner Gained") == 0)
             {
@@ -114,10 +110,8 @@ public class CharacterMovementLevel : MonoBehaviour
             }
         }
 
-        else if (currentPoint.name == "Point 9" && PlayerPrefs.GetInt("Point 9 Done") == 0)
+        else if (currentPoint.name == "Point 9" && PlayerPrefs.GetInt("Point 10 Locked") == 1 && PlayerPrefs.GetInt("Just Battled") != 1)
         {
-
-            PlayerPrefs.SetInt("Point 9 Done", 1);
 
             if (PlayerPrefs.GetInt("New Partner Gained") == 0)
             {

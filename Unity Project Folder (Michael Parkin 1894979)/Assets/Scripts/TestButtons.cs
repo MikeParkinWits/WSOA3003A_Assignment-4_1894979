@@ -68,6 +68,10 @@ public class TestButtons : MonoBehaviour
         PlayerPrefs.SetString("Spawn Point", "Point 1");
 
         PlayerPrefs.SetInt("TotalCoins", 75);
+
+        PlayerPrefs.SetInt("Point 2 Locked", 1);
+        PlayerPrefs.SetInt("Point 6 Locked", 1);
+        PlayerPrefs.SetInt("Point 10 Locked", 1);
     }
 
     public void OnQuit()
