@@ -131,7 +131,34 @@ public class CharacterMovementLevel : MonoBehaviour
 
         else if (!currentPoint.hideIcon && !currentPoint.hasDialogue && currentPoint.name != "Point 1" && !currentPoint.onlyTreasure)
         {
-            if (chance <= 0.5f && PlayerPrefs.GetInt("Just Battled") != 1)
+
+            float battleSceneChance = 0.5f;
+            float coinChance = 0.8f;
+            
+            if (PlayerPrefs.GetInt("LosingStreak") == 2)
+            {
+                battleSceneChance = 0.4f;
+                coinChance = 0.75f;
+            }
+            else if (PlayerPrefs.GetInt("LosingStreak") >= 3)
+            {
+                battleSceneChance = 0.4f;
+                coinChance = 0.85f;
+            }
+            
+            if (PlayerPrefs.GetInt("WinningStreak") == 2)
+            {
+                battleSceneChance = 0.55f;
+                coinChance = 0.7f;
+            }
+            else if (PlayerPrefs.GetInt("WinningStreak") >= 3)
+            {
+                battleSceneChance = 0.65f;
+                coinChance = 0.75f;
+            }
+
+
+            if (chance <= battleSceneChance && PlayerPrefs.GetInt("Just Battled") != 1)
             {       
                 if (PlayerPrefs.GetInt("New Partner Gained") == 0)
                 {
@@ -143,7 +170,7 @@ public class CharacterMovementLevel : MonoBehaviour
                 }
 
             }
-            else if (chance > 0.5f && chance <= 0.8f && PlayerPrefs.GetInt("Just Battled") != 1)
+            else if (chance > battleSceneChance && chance <= coinChance && PlayerPrefs.GetInt("Just Battled") != 1)
             {
                 int coins = UnityEngine.Random.Range(10, 20);
                 currentPoint.dialogueLines[0] = "Found " + coins + " coins!";
@@ -153,7 +180,7 @@ public class CharacterMovementLevel : MonoBehaviour
                 levelManager.UpdateDialogueBox();
 
             }
-            else if (chance > 0.8f && chance <= 1f)
+            else if (chance > coinChance && chance <= 1f)
             {
 
             }
@@ -167,7 +194,7 @@ public class CharacterMovementLevel : MonoBehaviour
         if (currentPoint.onlyTreasure && (PlayerPrefs.GetInt("Teasure Pickup") == 0))
         {
 
-            PlayerPrefs.SetInt("Teasure Pickup", 1);
+            PlayerPrefs.SetInt("Treasure Pickup", 1);
 
             int coins = UnityEngine.Random.Range(30, 40);
             currentPoint.dialogueLines[0] = "You found a chest with " + coins + " coins!";

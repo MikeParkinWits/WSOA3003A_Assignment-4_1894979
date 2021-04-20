@@ -1148,6 +1148,8 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.LOST)
         {
 
+            PlayerPrefs.SetInt("WinningStreak", 0);
+
             int losingStreak;
 
             losingStreak = PlayerPrefs.GetInt("LosingStreak") + 1;
