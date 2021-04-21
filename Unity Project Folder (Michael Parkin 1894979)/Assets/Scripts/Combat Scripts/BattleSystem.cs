@@ -763,11 +763,11 @@ public class BattleSystem : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("SpecialStreak") >= 3)
         {
-            specialStreakBonus = 4;
+            specialStreakBonus = 3;
         }
 
         damageCalculated = (currentAttackDamage + playerUnit[currentPlayerNum].attackPower + UnityEngine.Random.Range(-2, 2)) - enemyUnit[0].defensePower;
-        damageCalculatedFloat = (damageCalculated * specialMoveMultiplier) - specialStreakBonus;
+        damageCalculatedFloat = (damageCalculated * specialMoveMultiplier) + specialStreakBonus;
         damageCalculated = (int) damageCalculatedFloat;
 
         if (UnityEngine.Random.Range(0f, 10f/specialAccuracyBuffer) <= currentAccuracy)
@@ -1546,11 +1546,11 @@ public class BattleSystem : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("SpecialStreak") >= 3)
         {
-            specialStreakBonus = 4;
+            specialStreakBonus = 3;
         }
 
         damageCalculated = (currentAttackDamage + playerUnit[currentPlayerNum].attackPower + UnityEngine.Random.Range(-2, 2)) - enemyUnit[enemyAlive].defensePower;
-        damageCalculatedFloat = (damageCalculated * specialMoveMultiplier) - specialStreakBonus;
+        damageCalculatedFloat = (damageCalculated * specialMoveMultiplier) + specialStreakBonus;
         damageCalculated = (int)damageCalculatedFloat;
 
 
@@ -1858,11 +1858,11 @@ public class BattleSystem : MonoBehaviour
         }
         else if (PlayerPrefs.GetInt("SpecialStreak") >= 3)
         {
-            specialStreakBonus = 4;
+            specialStreakBonus = 3;
         }
 
         damageCalculated = (currentAttackDamage + playerUnit[currentPlayerNum].attackPower + UnityEngine.Random.Range(-2, 2)) - enemyUnit[enemyAttackSelection].defensePower;
-        damageCalculatedFloat = (damageCalculated * specialMoveMultiplier) - specialStreakBonus;
+        damageCalculatedFloat = (damageCalculated * specialMoveMultiplier) + specialStreakBonus;
         damageCalculated = (int)damageCalculatedFloat;
 
 
