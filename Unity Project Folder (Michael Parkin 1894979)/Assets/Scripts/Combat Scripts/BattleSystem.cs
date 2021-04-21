@@ -1259,12 +1259,8 @@ public class BattleSystem : MonoBehaviour
             {
                 int totalCoins = PlayerPrefs.GetInt("TotalCoins") - coinsLost;
 
-                Debug.Log("COINS WON: " + coinsLost);
-                Debug.Log("COINS TOTAL: " + totalCoins);
                 PlayerPrefs.SetInt("TotalCoins", totalCoins);
                 coinsAdded = true;
-
-                Debug.Log("COINS ADDED: " + coinsAdded);
             }
 
 
@@ -1457,7 +1453,6 @@ public class BattleSystem : MonoBehaviour
 
         startPos = playerUnit[currentPlayerNum].transform.position;
 
-        //Debug.Log("Start Pos: ");
 
 
 
