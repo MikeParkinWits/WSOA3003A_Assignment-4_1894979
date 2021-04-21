@@ -17,7 +17,9 @@ public class CharacterMovementLevel : MonoBehaviour
 
     private void Start()
     {
-        currentPoint.dialogueManager.dialogueActive = false;
+        //currentPoint.dialogueManager.dialogueActive = false;
+        //HERE IF ERROR OF DIALOGUE ACTIVE (dialogueActive) OCCURS!!!
+
         currentPoint.dialogueManager.canMove = true;
     }
 
@@ -187,7 +189,19 @@ public class CharacterMovementLevel : MonoBehaviour
 
         if (currentPoint.hasDialogue)
         {
-            levelManager.UpdateDialogueBox();
+            if (point.name == "Point 1")
+            {
+                if (PlayerPrefs.GetInt("BeginningTextDone") == 0)
+                {
+                    levelManager.UpdateDialogueBox();
+                    PlayerPrefs.SetInt("BeginningTextDone", 1);
+                }
+            }
+            else
+            {
+                levelManager.UpdateDialogueBox();
+            }
+
         }
 
         if (currentPoint.onlyTreasure && (PlayerPrefs.GetInt("Teasure Pickup") == 0))

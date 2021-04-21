@@ -103,9 +103,9 @@ public class LevelManager : MonoBehaviour
 				mainCharacter.currentPoint.dialogueManager.currentLine = 0;
 
 				mainCharacter.currentPoint.dialogueManager.ShowDialogue(mainCharacter.currentPoint.dialogueLines, mainCharacter.currentPoint.hasDialogueButtons);
-			}
-		
-		
+		}
+
+
 	}
 
 

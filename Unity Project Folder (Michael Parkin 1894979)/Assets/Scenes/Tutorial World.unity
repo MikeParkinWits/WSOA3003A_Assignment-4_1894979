@@ -3862,7 +3862,7 @@ MonoBehaviour:
   sceneToLoadTwoPlayers: 
   locationName: 
   isLocked: 0
-  hasDialogue: 0
+  hasDialogue: 1
   hasDialogueButtons: 0
   onlyTreasure: 0
   pointAbove: {fileID: 0}
@@ -3872,8 +3872,11 @@ MonoBehaviour:
   dialogue: Hey there
   dialogueManager: {fileID: 0}
   dialogueLines:
-  - Hello!
-  - How are you?!
+  - Hello young one!
+  - So I heard that you want to take on the treacherous triangles that rule the land?
+  - Well, you'll have quite the journey ahead... So make sure to stop by my dojos
+    to train!
+  - Here's 75 coins to start you out, and goodluck!
 --- !u!1 &1624401516
 GameObject:
   m_ObjectHideFlags: 0

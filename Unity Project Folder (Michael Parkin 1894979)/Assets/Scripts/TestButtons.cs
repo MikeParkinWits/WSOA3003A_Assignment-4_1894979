@@ -72,6 +72,8 @@ public class TestButtons : MonoBehaviour
         PlayerPrefs.SetInt("Point 2 Locked", 1);
         PlayerPrefs.SetInt("Point 6 Locked", 1);
         PlayerPrefs.SetInt("Point 10 Locked", 1);
+
+        PlayerPrefs.SetInt("BeginningTextDone", 0);
     }
 
     public void OnQuit()
