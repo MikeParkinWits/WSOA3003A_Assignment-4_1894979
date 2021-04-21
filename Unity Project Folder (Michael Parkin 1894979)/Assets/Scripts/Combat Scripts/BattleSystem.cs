@@ -109,10 +109,13 @@ public class BattleSystem : MonoBehaviour
 
     public bool specialAllowed = true;
 
+    public bool coinsAdded;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        coinsAdded = false;
 
         //actionsUI.SetActive(false);
 
@@ -222,6 +225,8 @@ public class BattleSystem : MonoBehaviour
 
     void Update()
     {
+
+        Debug.Log("COINS: " + PlayerPrefs.GetInt("TotalCoins"));
 
         if (PlayerPrefs.GetInt("TotalCoins") < 0)
         {
@@ -1171,8 +1176,20 @@ public class BattleSystem : MonoBehaviour
 
             dialogueText.text = "YOU HAVE WON! \n" + "You received " + coinsWon + " coins!";
 
-            int totalCoins = PlayerPrefs.GetInt("TotalCoins") + coinsWon;
-            PlayerPrefs.SetInt("TotalCoins", totalCoins);
+            if (!coinsAdded)
+            {
+                int totalCoins = PlayerPrefs.GetInt("TotalCoins") + coinsWon;
+
+                Debug.Log("COINS WON: " + coinsWon);
+                Debug.Log("COINS TOTAL: " + totalCoins);
+                PlayerPrefs.SetInt("TotalCoins", totalCoins);
+                coinsAdded = true;
+
+                Debug.Log("COINS ADDED: " + coinsAdded);
+            }
+
+
+
 
             AudioManager.winAudio.Play();
             AudioManager.backgroundAudio.Stop();
@@ -1238,8 +1255,19 @@ public class BattleSystem : MonoBehaviour
 
             dialogueText.text = "You have been defeated... \n" + "You lost " + coinsLost + " coins...\n" + "You should visit the dojo for training";
 
-            int totalCoins = PlayerPrefs.GetInt("TotalCoins") - coinsLost;
-            PlayerPrefs.SetInt("TotalCoins", totalCoins);
+            if (!coinsAdded)
+            {
+                int totalCoins = PlayerPrefs.GetInt("TotalCoins") - coinsLost;
+
+                Debug.Log("COINS WON: " + coinsLost);
+                Debug.Log("COINS TOTAL: " + totalCoins);
+                PlayerPrefs.SetInt("TotalCoins", totalCoins);
+                coinsAdded = true;
+
+                Debug.Log("COINS ADDED: " + coinsAdded);
+            }
+
+
 
             AudioManager.loseAudio.Play();
         }
@@ -1251,6 +1279,8 @@ public class BattleSystem : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial World");
         PlayerPrefs.SetInt("Just Battled", 1);
+
+        coinsAdded = false;
     }
 
     IEnumerator PlayerHeal()
