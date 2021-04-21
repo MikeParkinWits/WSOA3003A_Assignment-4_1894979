@@ -795,7 +795,15 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
-                dialogueText.text = "The attack is successful! \n" + "Special Bonus Missed, no damage increase. \n";
+                if (PlayerPrefs.GetInt("Special Bonus Learnt") == 1)
+                {
+                    dialogueText.text = "The attack is successful! \n" + "Special Bonus Missed, no damage increase. \n";
+                }
+                else if (PlayerPrefs.GetInt("Special Bonus Learnt") == 0)
+                {
+                    dialogueText.text = "The attack is successful! \n";
+                }
+                
 
                 //enemyDamageAnimationText[0].text = damageCalculated.ToString();
             }
@@ -1126,8 +1134,15 @@ public class BattleSystem : MonoBehaviour
 
     private void EndBattle()
     {
+
+        playerUI.currentTurnIndicator.SetActive(false);
+
         if (state == BattleState.WON)
         {
+            actionsUI.SetActive(false);
+            enemySelectPanel.SetActive(false);
+            actionButtonsUI.SetActive(false);
+
             PlayerPrefs.SetInt("LosingStreak", 0);
 
             int winningStreak;
@@ -1190,6 +1205,10 @@ public class BattleSystem : MonoBehaviour
         }
         else if (state == BattleState.LOST)
         {
+
+            actionsUI.SetActive(false);
+            enemySelectPanel.SetActive(false);
+            actionButtonsUI.SetActive(false);
 
             PlayerPrefs.SetInt("WinningStreak", 0);
 
@@ -1554,7 +1573,14 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
-                dialogueText.text = "The attack is successful! \n" + "Special Bonus Missed, no damage increase. \n";
+                if (PlayerPrefs.GetInt("Special Bonus Learnt") == 1)
+                {
+                    dialogueText.text = "The attack is successful! \n" + "Special Bonus Missed, no damage increase. \n";
+                }
+                else if (PlayerPrefs.GetInt("Special Bonus Learnt") == 0)
+                {
+                    dialogueText.text = "The attack is successful! \n";
+                }
 
                 //enemyDamageAnimationText[enemyAlive].text = damageCalculated.ToString();
             }
@@ -1846,7 +1872,14 @@ public class BattleSystem : MonoBehaviour
             }
             else
             {
-                dialogueText.text = "The attack is successful! \n" + "Special Bonus Missed, no damage increase. \n";
+                if (PlayerPrefs.GetInt("Special Bonus Learnt") == 1)
+                {
+                    dialogueText.text = "The attack is successful! \n" + "Special Bonus Missed, no damage increase. \n";
+                }
+                else if (PlayerPrefs.GetInt("Special Bonus Learnt") == 0)
+                {
+                    dialogueText.text = "The attack is successful! \n";
+                }
 
                 //enemyDamageAnimationText[enemyAttackSelection].text = damageCalculated.ToString();
             }

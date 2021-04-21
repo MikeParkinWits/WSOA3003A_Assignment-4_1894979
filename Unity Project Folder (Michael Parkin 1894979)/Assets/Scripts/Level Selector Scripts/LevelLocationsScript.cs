@@ -57,6 +57,11 @@ public class LevelLocationsScript : MonoBehaviour
             hasDialogue = false;
         }
 
+        if (PlayerPrefs.GetInt("BeginningTextDone") == 1 && gameObject.name == "Point 1")
+        {
+            hasDialogue = false;
+        }
+
         levelLocationDirections = new Dictionary<Directions, LevelLocationsScript>
         {
             { Directions.ABOVE, pointAbove },

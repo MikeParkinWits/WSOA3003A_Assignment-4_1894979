@@ -58,6 +58,11 @@ public class BattleUI : MonoBehaviour
 
     public void SetHP(int healthPoints, int index)
     {
+        if (healthPoints < 0)
+        {
+            healthPoints = 0;
+        }
+
         hpText[index].text = healthPoints.ToString();
     }
 

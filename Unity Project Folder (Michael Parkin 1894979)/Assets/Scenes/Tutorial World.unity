@@ -5086,6 +5086,7 @@ MonoBehaviour:
   mainCharacter: {fileID: 800745617}
   pointToSpawn: {fileID: 1426657412}
   currentLevelText: {fileID: 583790973}
+  mainCharacterSprite: {fileID: 800745615}
   levelTwoLockConnection: {fileID: 1303668771}
   levelSixLockConnection: {fileID: 1562625498}
   levelTenLockConnection: {fileID: 1902120520}

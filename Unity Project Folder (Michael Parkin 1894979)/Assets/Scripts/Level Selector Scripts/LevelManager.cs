@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 	public CharacterMovementLevel mainCharacter;
     public LevelLocationsScript pointToSpawn;
     public Text currentLevelText;
+	public SpriteRenderer mainCharacterSprite;
 
 	public GameObject levelTwoLockConnection;
 	public GameObject levelSixLockConnection;
@@ -81,10 +82,13 @@ public class LevelManager : MonoBehaviour
 			else if (Input.GetKeyDown(KeyCode.A))
 			{
 				mainCharacter.TrySetDirection(Directions.LEFT);
+
+				mainCharacterSprite.flipX = true;
 			}
 			else if (Input.GetKeyDown(KeyCode.D))
 			{
 				mainCharacter.TrySetDirection(Directions.RIGHT);
+				mainCharacterSprite.flipX = false;
 			}
 		}
 	}
