@@ -5198,7 +5198,7 @@ GameObject:
   - component: {fileID: 800745617}
   m_Layer: 0
   m_Name: Main Character
-  m_TagString: Untagged
+  m_TagString: Main Character Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5282,6 +5282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   dojoMaster: {fileID: 1913658253}
+  dojoMasterTwo: {fileID: 1347446303}
 --- !u!1 &806833440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6506,6 +6507,8 @@ MonoBehaviour:
   currentLine: 0
   canMove: 0
   showActionButtons: 0
+  dojoMasterOne: {fileID: 1913658253}
+  dojoMasterTwo: {fileID: 1347446303}
 --- !u!1001 &967365199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6513,6 +6516,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 947654669}
     m_Modifications:
+    - target: {fileID: 1896555029, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1043.85
@@ -10126,6 +10133,92 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1347446302
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1896555029, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.19824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.70920056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.70920056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.70920056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507334, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_Name
+      value: Dojo Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507334, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507334, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_TagString
+      value: Dojo Master 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+--- !u!1 &1347446303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4790319702594507334, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+  m_PrefabInstance: {fileID: 1347446302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1355796925
 GameObject:
   m_ObjectHideFlags: 0
@@ -12563,7 +12656,7 @@ MonoBehaviour:
   sceneToLoadTwoPlayers: 
   locationName: 
   isLocked: 1
-  hasDialogue: 0
+  hasDialogue: 1
   hasDialogueButtons: 0
   onlyTreasure: 0
   pointAbove: {fileID: 100372901}
@@ -12572,7 +12665,14 @@ MonoBehaviour:
   pointRight: {fileID: 0}
   dialogue: 
   dialogueManager: {fileID: 0}
-  dialogueLines: []
+  dialogueLines:
+  - Why hello again young one, I'm glad to see that you haven't given up yet
+  - I should let you know, things get harder from here
+  - But to make your life easier, let me give you a piece of advice
+  - When there are multiple people battling at once, your moves speed matters more.
+  - The slower or faster your moves, the shorter or longer you'll have to wait before
+    you can go again!
+  - I have now taught you all I know young one, go out and make me proud!
 --- !u!212 &1732797525
 SpriteRenderer:
   m_ObjectHideFlags: 0

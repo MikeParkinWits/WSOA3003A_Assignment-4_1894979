@@ -16,6 +16,7 @@ public class CharacterMovementLevel : MonoBehaviour
     private LevelManager levelManager;
 
     public GameObject dojoMaster;
+    public GameObject dojoMasterTwo;
 
     private void Start()
     {
@@ -202,6 +203,19 @@ public class CharacterMovementLevel : MonoBehaviour
             {
                 levelManager.UpdateDialogueBox();
                 dojoMaster.SetActive(false);
+            }
+
+            if (point.name == "Waypoint 1")
+            {
+                if (PlayerPrefs.GetInt("SecondTextDone") == 0)
+                {
+                    levelManager.UpdateDialogueBox();
+                    currentPoint.hasDialogue = false;
+                }
+            }
+            else
+            {
+                levelManager.UpdateDialogueBox();
             }
 
         }

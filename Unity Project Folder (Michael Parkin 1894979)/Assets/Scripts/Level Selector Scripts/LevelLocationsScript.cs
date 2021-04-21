@@ -52,6 +52,11 @@ public class LevelLocationsScript : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
         }
 
+        if (PlayerPrefs.GetInt("SecondTextDone") == 1 && gameObject.name == "Waypoint 1")
+        {
+            hasDialogue = false;
+        }
+
         levelLocationDirections = new Dictionary<Directions, LevelLocationsScript>
         {
             { Directions.ABOVE, pointAbove },

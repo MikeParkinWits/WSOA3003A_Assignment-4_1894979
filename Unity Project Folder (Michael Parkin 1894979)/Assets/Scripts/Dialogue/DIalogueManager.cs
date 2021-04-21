@@ -20,7 +20,10 @@ public class DIalogueManager : MonoBehaviour
 
     public bool showActionButtons;
 
-    GameObject dojoMaster;
+    public GameObject dojoMasterOne;
+    public GameObject dojoMasterTwo;
+
+    CharacterMovementLevel characterMovementLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -29,15 +32,26 @@ public class DIalogueManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Tutorial World")
         {
-            dojoMaster = GameObject.FindGameObjectWithTag("Dojo Master");
+            //dojoMasterOne = GameObject.FindGameObjectWithTag("Dojo Master 1");
+            //dojoMasterTwo = GameObject.FindGameObjectWithTag("Dojo Master 2");
+            characterMovementLevel = GameObject.FindGameObjectWithTag("Main Character Level").GetComponent<CharacterMovementLevel>();
 
             if (PlayerPrefs.GetInt("BeginningTextDone") == 0)
             {
-                dojoMaster.SetActive(true);
+                dojoMasterOne.SetActive(true);
             }
             else if (PlayerPrefs.GetInt("BeginningTextDone") == 1)
             {
-                dojoMaster.SetActive(false);
+                dojoMasterOne.SetActive(false);
+            }
+
+            if (PlayerPrefs.GetInt("SecondTextDone") == 0 && characterMovementLevel.currentPoint.name == "Waypoint 1")
+            {
+                dojoMasterTwo.SetActive(true);
+            }
+            else if (PlayerPrefs.GetInt("SecondTextDone") == 1)
+            {
+                dojoMasterTwo.SetActive(false);
             }
         }
     }
@@ -66,7 +80,17 @@ public class DIalogueManager : MonoBehaviour
 
                 if (PlayerPrefs.GetInt("BeginningTextDone") == 1)
                 {
-                    dojoMaster.SetActive(false);
+                    dojoMasterOne.SetActive(false);
+                }
+
+                if (PlayerPrefs.GetInt("SecondTextDone") == 0 && characterMovementLevel.currentPoint.name == "Waypoint 1")
+                {
+                    PlayerPrefs.SetInt("SecondTextDone", 1);
+                    dojoMasterTwo.SetActive(false);
+                }
+                else if (PlayerPrefs.GetInt("SecondTextDone") == 1)
+                {
+                    dojoMasterTwo.SetActive(false);
                 }
             }
 

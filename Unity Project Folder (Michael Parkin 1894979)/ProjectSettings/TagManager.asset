@@ -8,7 +8,9 @@ TagManager:
   - Player 2
   - Text
   - Sprite
-  - Dojo Master
+  - Dojo Master 1
+  - Dojo Master 2
+  - Main Character Level
   layers:
   - Default
   - TransparentFX
