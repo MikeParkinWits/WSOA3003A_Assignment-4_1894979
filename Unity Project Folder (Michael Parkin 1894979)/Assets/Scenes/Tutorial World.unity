@@ -1874,6 +1874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  dojoMaster: {fileID: 1913658253}
 --- !u!1 &832755850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,6 +2328,7 @@ RectTransform:
   m_Children:
   - {fileID: 836330377}
   - {fileID: 1025959051}
+  - {fileID: 1913658255}
   m_Father: {fileID: 912186249}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2359,6 +2361,67 @@ MonoBehaviour:
   currentLine: 0
   canMove: 0
   showActionButtons: 0
+--- !u!1001 &967365199
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 947654669}
+    m_Modifications:
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1043.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -533.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507334, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_Name
+      value: Dojo Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790319702594507334, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
 --- !u!1 &971184403
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,11 +3935,13 @@ MonoBehaviour:
   dialogue: Hey there
   dialogueManager: {fileID: 0}
   dialogueLines:
-  - Hello young one!
-  - So I heard that you want to take on the treacherous triangles that rule the land?
-  - Well, you'll have quite the journey ahead... So make sure to stop by my dojos
-    to train!
-  - Here's 75 coins to start you out, and goodluck!
+  - Hello there young one.
+  - So, I hear you want to take on on the treacherous triangles that rule the land?
+  - Well, it won't be easy... But if you visit my dojos along the way, you might
+    have a chance!
+  - But, my dojos are like life young one... Everything comes at a cost!
+  - But don't worry, I'll give you some coins to help start you out!
+  - So go forth and win!
 --- !u!1 &1624401516
 GameObject:
   m_ObjectHideFlags: 0
@@ -4729,6 +4794,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1913658253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4790319702594507334, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+  m_PrefabInstance: {fileID: 967365199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1913658255 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4790319702594507329, guid: 7599bb6edf8571a4386e1b49a43cee12, type: 3}
+  m_PrefabInstance: {fileID: 967365199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1977433293
 GameObject:
   m_ObjectHideFlags: 0

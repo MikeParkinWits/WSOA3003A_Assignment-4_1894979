@@ -8,6 +8,7 @@ TagManager:
   - Player 2
   - Text
   - Sprite
+  - Dojo Master
   layers:
   - Default
   - TransparentFX

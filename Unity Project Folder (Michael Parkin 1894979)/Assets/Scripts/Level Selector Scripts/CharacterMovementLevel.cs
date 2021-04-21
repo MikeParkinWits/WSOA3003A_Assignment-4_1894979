@@ -15,6 +15,8 @@ public class CharacterMovementLevel : MonoBehaviour
     private LevelLocationsScript nextPoint;
     private LevelManager levelManager;
 
+    public GameObject dojoMaster;
+
     private void Start()
     {
         //currentPoint.dialogueManager.dialogueActive = false;
@@ -194,12 +196,12 @@ public class CharacterMovementLevel : MonoBehaviour
                 if (PlayerPrefs.GetInt("BeginningTextDone") == 0)
                 {
                     levelManager.UpdateDialogueBox();
-                    PlayerPrefs.SetInt("BeginningTextDone", 1);
                 }
             }
             else
             {
                 levelManager.UpdateDialogueBox();
+                dojoMaster.SetActive(false);
             }
 
         }

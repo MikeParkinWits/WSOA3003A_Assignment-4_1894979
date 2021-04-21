@@ -20,10 +20,26 @@ public class DIalogueManager : MonoBehaviour
 
     public bool showActionButtons;
 
+    GameObject dojoMaster;
+
     // Start is called before the first frame update
     void Start()
     {
         canMove = true;
+
+        if (SceneManager.GetActiveScene().name == "Tutorial World")
+        {
+            dojoMaster = GameObject.FindGameObjectWithTag("Dojo Master");
+
+            if (PlayerPrefs.GetInt("BeginningTextDone") == 0)
+            {
+                dojoMaster.SetActive(true);
+            }
+            else if (PlayerPrefs.GetInt("BeginningTextDone") == 1)
+            {
+                dojoMaster.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -41,6 +57,19 @@ public class DIalogueManager : MonoBehaviour
             dialogueActive = false;
             dialogueBox.SetActive(false);
 
+            if (SceneManager.GetActiveScene().name == "Tutorial World")
+            {
+                if (PlayerPrefs.GetInt("BeginningTextDone") == 0)
+                {
+                    PlayerPrefs.SetInt("BeginningTextDone", 1);
+                }
+
+                if (PlayerPrefs.GetInt("BeginningTextDone") == 1)
+                {
+                    dojoMaster.SetActive(false);
+                }
+            }
+
             if (showActionButtons)
             {
                 dialogueButtons.SetActive(false);
@@ -53,6 +82,7 @@ public class DIalogueManager : MonoBehaviour
         }
 
         dialogueText.text = dialogueLines[currentLine];
+
     }
 
     //Used to active dialogue box from other scripts
