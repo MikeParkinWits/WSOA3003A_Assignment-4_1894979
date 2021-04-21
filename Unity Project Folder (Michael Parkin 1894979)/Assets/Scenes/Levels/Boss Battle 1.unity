@@ -1754,8 +1754,6 @@ MonoBehaviour:
   turnsUI:
   - {fileID: 1609904499}
   - {fileID: 665027833}
-  - {fileID: 741311396}
-  - {fileID: 1688452361}
   state: 0
   playerPrefab: {fileID: 5107626517389368758, guid: 76381f13a1ea83e409dcf04c583f31b0, type: 3}
   enemyPrefab: {fileID: 1749697871844888905, guid: 9bbcc8e93579197458837cbcfdd9fca1, type: 3}
@@ -1848,6 +1846,7 @@ MonoBehaviour:
   hasStarPos: 0
   eventScript: {fileID: 0}
   specialAllowed: 1
+  coinsAdded: 0
 --- !u!4 &372138391
 Transform:
   m_ObjectHideFlags: 0
