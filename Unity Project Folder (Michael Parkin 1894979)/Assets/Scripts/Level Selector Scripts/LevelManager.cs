@@ -25,29 +25,29 @@ public class LevelManager : MonoBehaviour
 
 		if (PlayerPrefs.GetInt("Point 2 Locked") == 1)
 		{
-			levelTwoLockConnection.SetActive(false);
+			levelTwoLockConnection.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("Point 2 Locked") == 0)
 		{
-			levelTwoLockConnection.SetActive(true);
+			levelTwoLockConnection.SetActive(false);
 		}
 
 		if (PlayerPrefs.GetInt("Point 6 Locked") == 1)
 		{
-			levelSixLockConnection.SetActive(false);
+			levelSixLockConnection.SetActive(true);
 		}
 		else if(PlayerPrefs.GetInt("Point 6 Locked") == 0)
 		{
-			levelSixLockConnection.SetActive(true);
+			levelSixLockConnection.SetActive(false);
 		}
 
 		if (PlayerPrefs.GetInt("Point 10 Locked") == 1)
 		{
-			levelTenLockConnection.SetActive(false);
+			levelTenLockConnection.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("Point 10 Locked") == 0)
 		{
-			levelTenLockConnection.SetActive(true);
+			levelTenLockConnection.SetActive(false);
 		}
 	}
 
