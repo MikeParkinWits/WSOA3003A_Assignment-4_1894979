@@ -40,7 +40,7 @@ public class TestButtons : MonoBehaviour
 
         //totalCoinsTxt.text = "Total Coins: " + PlayerPrefs.GetInt("TotalCoins").ToString();
 
-        smallMaxHPTxt.text = "Max HP: " + playerStats[0].unitMaxHP.ToString();
+        //smallMaxHPTxt.text = "Max HP: " + playerStats[0].unitMaxHP.ToString();
         smallSpeedTxt.text = "Starting Speed: " + playerStats[0].unitSpeed.ToString();
         smallAttackPowerTxt.text = "Attack Power: " + playerStats[0].attackPower.ToString();
         smallDefencePowerTxt.text = "Defence Power: " + playerStats[0].defensePower.ToString();

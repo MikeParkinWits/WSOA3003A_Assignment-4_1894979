@@ -193,7 +193,7 @@ public class Actions : MonoBehaviour
     public void EnemyQuickMove()
     {
         actionSpeed = 20;
-        actionDamage = 6;
+        actionDamage = 7;
         actionAccuracy = 9;
     }
 

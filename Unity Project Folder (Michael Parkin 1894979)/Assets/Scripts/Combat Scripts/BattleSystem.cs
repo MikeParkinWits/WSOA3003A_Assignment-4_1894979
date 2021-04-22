@@ -178,7 +178,7 @@ public class BattleSystem : MonoBehaviour
                 turnsUI[count].text = x.unitName.ToString() + " " + x.unitSpeed;
             }
 
-            //Debug.Log(x.ToString() + " " + x.unitSpeed);
+            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
             count++;
         }
 
@@ -330,6 +330,8 @@ public class BattleSystem : MonoBehaviour
                 //Debug.Log("Hello: " + x.uniqueNum);
 
             }
+
+            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
 
             //Debug.Log(x.ToString() + " " + x.unitSpeed);
             count++;
@@ -695,6 +697,8 @@ public class BattleSystem : MonoBehaviour
                 turnsUI[count].text = x.unitName.ToString() + " " + x.unitSpeed;
             }
 
+            count++;
+
             //Debug.Log(x.ToString() + " " + x.unitSpeed);
         }
 
@@ -899,7 +903,7 @@ public class BattleSystem : MonoBehaviour
 
         int randomNum = UnityEngine.Random.Range(0, 2);
 
-        if (randomNum == 1)
+        if (randomNum == 0)
         {
             actions.EnemyQuickMove();
 
@@ -907,7 +911,7 @@ public class BattleSystem : MonoBehaviour
             currentAttackSpeed = actions.actionSpeed;
             currentAccuracy = actions.actionAccuracy;
         }
-        else if (randomNum == 2)
+        else if (randomNum == 1)
         {
             actions.EnemyStandardMove();
 
@@ -916,7 +920,7 @@ public class BattleSystem : MonoBehaviour
             currentAccuracy = actions.actionAccuracy;
         }
 
-        enemyUnit[currentEnemyNum].NormalAttackSpeed();
+        enemyUnit[currentEnemyNum].EnemyAttackSpeed();
 
         //Debug.Log("New Order");
 
@@ -931,7 +935,9 @@ public class BattleSystem : MonoBehaviour
                 turnsUI[count].text = x.unitName.ToString() + " " + x.unitSpeed;
             }
 
-            //Debug.Log(x.ToString() + " " + x.unitSpeed);
+            count++;
+
+            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
         }
 
         dialogueText.text = enemyUnit[currentEnemyNum].unitName + " attacks!";
@@ -1483,7 +1489,9 @@ public class BattleSystem : MonoBehaviour
                 turnsUI[count].text = x.unitName.ToString() + " " + x.unitSpeed;
             }
 
-            //Debug.Log(x.ToString() + " " + x.unitSpeed);
+            count++;
+
+            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
         }
 
 
@@ -1790,7 +1798,9 @@ public class BattleSystem : MonoBehaviour
                 turnsUI[count].text = x.unitName.ToString() + " " + x.unitSpeed;
             }
 
-            //Debug.Log(x.ToString() + " " + x.unitSpeed);
+            count++;
+
+            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
         }
 
 

@@ -96,6 +96,8 @@ public class Unit : MonoBehaviour
 
         battleSystem.turnOrder.First().unitSpeed += (speedChange) + battleSystem.currentAttackSpeed;
 
+        Debug.Log("ATTACK SPEED PLAYER: " + battleSystem.currentAttackSpeed);
+
 
         battleSystem.turnOrder = battleSystem.turnOrder.OrderBy(w => w.unitSpeed).ToList();
     }
@@ -112,6 +114,7 @@ public class Unit : MonoBehaviour
 
         battleSystem.turnOrder.First().unitSpeed += (speedChange) + battleSystem.currentAttackSpeed;
 
+        Debug.Log("ATTACK SPEED ENEMY: " + battleSystem.currentAttackSpeed);
 
         battleSystem.turnOrder = battleSystem.turnOrder.OrderBy(w => w.unitSpeed).ToList();
     }
