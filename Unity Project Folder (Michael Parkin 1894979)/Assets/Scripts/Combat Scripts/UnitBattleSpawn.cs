@@ -20,7 +20,6 @@ public class UnitBattleSpawn : MonoBehaviour
 
 	void Start()
 	{
-		Debug.Log(GetValue(1));
 	}
 }
 [System.Serializable]

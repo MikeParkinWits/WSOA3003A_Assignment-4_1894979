@@ -252,8 +252,8 @@ MonoBehaviour:
   playerType: 
   unitType: 1
   uniqueNum: 2
-  attackPower: 6
-  defensePower: 5
+  attackPower: 10
+  defensePower: 6
   turnIndicator: {fileID: 223883401430174111}
 --- !u!95 &7792749058331068927
 Animator:
@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialStart: 0
+  specialStartTest: 0
 --- !u!1 &6175022492774131179
 GameObject:
   m_ObjectHideFlags: 0

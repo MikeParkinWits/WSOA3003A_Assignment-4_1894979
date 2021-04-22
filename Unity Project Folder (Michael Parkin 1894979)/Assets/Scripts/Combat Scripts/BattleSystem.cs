@@ -138,7 +138,6 @@ public class BattleSystem : MonoBehaviour
             foreach (var x in turnOrder)
             {
                 x.unitSpeed -= startSpeedBuffer;
-                //Debug.Log(x.ToString() + " " + x.unitSpeed);
             }
         }
 
@@ -178,13 +177,11 @@ public class BattleSystem : MonoBehaviour
                 turnsUI[count].text = x.unitName.ToString() + " " + x.unitSpeed;
             }
 
-            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
             count++;
         }
 
         int newCount = 0;
 
-        //Debug.Log("Animator: " + playerAnimator[0]);
 
         int otherNewCount = 0;
 
@@ -226,7 +223,6 @@ public class BattleSystem : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("COINS: " + PlayerPrefs.GetInt("TotalCoins"));
 
         if (PlayerPrefs.GetInt("TotalCoins") < 0)
         {
@@ -244,7 +240,6 @@ public class BattleSystem : MonoBehaviour
 
             if (PlayerPrefs.GetInt("Special Start") == 1 && specialAllowed == true)
             {
-                //Debug.Log("Special SPEEECCCIIIAAALLLLL");
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -269,7 +264,6 @@ public class BattleSystem : MonoBehaviour
         foreach (var x in playerHealthSliders)
         {
 
-            //Debug.Log("Slider: " + countSliders);
 
             x.maxValue = playerUnit[countSliders].unitMaxHP;
             x.value = playerUnit[countSliders].unitCurrentHP;
@@ -283,7 +277,6 @@ public class BattleSystem : MonoBehaviour
         foreach (var x in enemyHealthSliders)
         {
 
-            //Debug.Log("Slider: " + countSliders);
 
             x.maxValue = enemyUnit[countSliders].unitMaxHP;
             x.value = enemyUnit[countSliders].unitCurrentHP;
@@ -327,17 +320,13 @@ public class BattleSystem : MonoBehaviour
                     //turnsUI[2].text = " ";
                 }
 
-                //Debug.Log("Hello: " + x.uniqueNum);
 
             }
 
-            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
 
-            //Debug.Log(x.ToString() + " " + x.unitSpeed);
             count++;
         }
 
-        //Debug.Log("Current Player: " + currentPlayerNum);
 
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -345,16 +334,13 @@ public class BattleSystem : MonoBehaviour
             /*
             turnOrder.First().unitSpeed += 10;
 
-            Debug.Log("New Order");
 
             foreach (var x in turnOrder)
             {
-                Debug.Log(x.ToString() + " " + x.unitSpeed);
             }
             */
 
 
-            //Debug.Log("Player Unit 1: " + playerUnit[0].unitSpeed);
 
             SceneManager.LoadScene("Test Menu");
 
@@ -402,7 +388,7 @@ public class BattleSystem : MonoBehaviour
         foreach (var x in playerCharacters)
         {
             playerGameObject = Instantiate(x, unitSpawnPoints[unitSpawnOffset + playerUnitIndex]);
-            //Debug.Log("Count: " + playerGameObject.GetComponent<Unit>());
+
             playerUnit[playerUnitIndex] = playerGameObject.GetComponent<Unit>();
             playerAnimator[playerUnitIndex] = playerGameObject.GetComponent<Animator>();
             playerDamageAnimationText[playerUnitIndex] = playerGameObject.GetComponentInChildren<Text>();
@@ -425,11 +411,9 @@ public class BattleSystem : MonoBehaviour
             }
 
             playerUnitIndex++;
-            //Debug.Log("Count: " + count);
 
         }
 
-        //GameObject playerGameObject = Instantiate(playerPrefab, playerBattleStation);
 
         EnemyBattleSpawnLocation();
 
@@ -665,19 +649,13 @@ public class BattleSystem : MonoBehaviour
 
         startPos = playerUnit[currentPlayerNum].transform.position;
 
-        //Debug.Log("Start Pos: ");
 
-
-
-
-        //Debug.Log("Start Pos: " + startPos + hasStarPos);
 
         while (playerUnit[currentPlayerNum].transform.position != middleOfScene.transform.position)
         {
             playerUnit[currentPlayerNum].transform.position = Vector3.MoveTowards(playerUnit[currentPlayerNum].transform.position, middleOfScene.transform.position, Time.deltaTime * 13f);
             yield return new WaitForSeconds(0.001f);
             playerUI.UIIndicator();
-            //Debug.Log("Start Pos: " + startPos + hasStarPos);
 
 
         }
@@ -685,7 +663,6 @@ public class BattleSystem : MonoBehaviour
 
         playerUnit[currentPlayerNum].NormalAttackSpeed();
 
-        //Debug.Log("New Order");
 
         int count = 0;
 
@@ -699,7 +676,6 @@ public class BattleSystem : MonoBehaviour
 
             count++;
 
-            //Debug.Log(x.ToString() + " " + x.unitSpeed);
         }
 
 
@@ -746,8 +722,6 @@ public class BattleSystem : MonoBehaviour
             specialMoveMultiplier = 1f;
         }
 
-        //Debug.Log("Special: " + specialInputAchieved);
-        //Debug.Log("Special Allowed: " + specialAllowed);
 
 
         specialInputAchieved = false;
@@ -883,19 +857,15 @@ public class BattleSystem : MonoBehaviour
 
         startPos = enemyUnit[currentEnemyNum].transform.position;
 
-            //Debug.Log("Start Pos: ");
-
         
 
 
-        //Debug.Log("Start Pos: " + startPos + hasStarPos);
 
         while (enemyUnit[currentEnemyNum].transform.position != middleOfScene.transform.position)
         {
             enemyUnit[currentEnemyNum].transform.position = Vector3.MoveTowards(enemyUnit[currentEnemyNum].transform.position, middleOfScene.transform.position, Time.deltaTime * 13f);
             yield return new WaitForSeconds(0.001f);
             playerUI.UIIndicator();
-            //Debug.Log("Start Pos: " + startPos + hasStarPos);
 
 
         }
@@ -922,9 +892,6 @@ public class BattleSystem : MonoBehaviour
 
         enemyUnit[currentEnemyNum].EnemyAttackSpeed();
 
-        //Debug.Log("New Order");
-
-        //Debug.Log("Start Pos: " + startPos);
 
         int count = 0;
 
@@ -937,7 +904,6 @@ public class BattleSystem : MonoBehaviour
 
             count++;
 
-            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
         }
 
         dialogueText.text = enemyUnit[currentEnemyNum].unitName + " attacks!";
@@ -1059,8 +1025,6 @@ public class BattleSystem : MonoBehaviour
         damageCalculated = (currentAttackDamage + enemyUnit[currentEnemyNum].attackPower + UnityEngine.Random.Range(-2, 2)) - playerUnit[num].defensePower;
         damageCalculatedFloat = damageCalculated * specialMoveMultiplier;
         damageCalculated = (int)damageCalculatedFloat;
-
-        //Debug.Log("DAMAGE AMOUNT ENEMY: " + damageCalculated);
 
         if (num == 0)
         {
@@ -1186,12 +1150,10 @@ public class BattleSystem : MonoBehaviour
             {
                 int totalCoins = PlayerPrefs.GetInt("TotalCoins") + coinsWon;
 
-                Debug.Log("COINS WON: " + coinsWon);
-                Debug.Log("COINS TOTAL: " + totalCoins);
+
                 PlayerPrefs.SetInt("TotalCoins", totalCoins);
                 coinsAdded = true;
 
-                Debug.Log("COINS ADDED: " + coinsAdded);
             }
 
 
@@ -1463,21 +1425,17 @@ public class BattleSystem : MonoBehaviour
 
 
 
-        //Debug.Log("Start Pos: " + startPos + hasStarPos);
-
         while (playerUnit[currentPlayerNum].transform.position != middleOfScene.transform.position)
         {
             playerUnit[currentPlayerNum].transform.position = Vector3.MoveTowards(playerUnit[currentPlayerNum].transform.position, middleOfScene.transform.position, Time.deltaTime * 13f);
             yield return new WaitForSeconds(0.001f);
             playerUI.UIIndicator();
-            //Debug.Log("Start Pos: " + startPos + hasStarPos);
 
 
         }
 
         playerUnit[currentPlayerNum].NormalAttackSpeed();
 
-        //Debug.Log("New Order");
 
         int count = 0;
 
@@ -1491,7 +1449,6 @@ public class BattleSystem : MonoBehaviour
 
             count++;
 
-            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
         }
 
 
@@ -1535,7 +1492,6 @@ public class BattleSystem : MonoBehaviour
             specialMoveMultiplier = 1f;
         }
 
-        //Debug.Log("Special: " + specialInputAchieved);
 
         specialInputAchieved = false;
         PlayerPrefs.SetInt("SpecialBonusAchieved", 0);
@@ -1766,27 +1722,21 @@ public class BattleSystem : MonoBehaviour
 
         startPos = playerUnit[currentPlayerNum].transform.position;
 
-        //Debug.Log("Start Pos: ");
 
 
 
-
-        //Debug.Log("Start Pos: " + startPos + hasStarPos);
 
         while (playerUnit[currentPlayerNum].transform.position != middleOfScene.transform.position)
         {
             playerUnit[currentPlayerNum].transform.position = Vector3.MoveTowards(playerUnit[currentPlayerNum].transform.position, middleOfScene.transform.position, Time.deltaTime * 13f);
             yield return new WaitForSeconds(0.001f);
             playerUI.UIIndicator();
-            //Debug.Log("Start Pos: " + startPos + hasStarPos);
-
 
         }
 
 
         playerUnit[currentPlayerNum].NormalAttackSpeed();
 
-        //Debug.Log("New Order");
 
         int count = 0;
 
@@ -1800,7 +1750,6 @@ public class BattleSystem : MonoBehaviour
 
             count++;
 
-            Debug.Log(x.ToString() + " SPEED " + x.unitSpeed);
         }
 
 
@@ -1849,7 +1798,6 @@ public class BattleSystem : MonoBehaviour
             specialMoveMultiplier = 1f;
         }
 
-        //Debug.Log("Special: " + specialInputAchieved);
 
         specialInputAchieved = false;
         PlayerPrefs.SetInt("SpecialBonusAchieved", 0);

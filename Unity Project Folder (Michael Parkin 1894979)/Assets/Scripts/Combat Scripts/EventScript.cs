@@ -25,7 +25,6 @@ public class EventScript : MonoBehaviour
 
             PlayerPrefs.SetInt("Special Start", 1);
 
-            Debug.Log("Special Started");
         }
     }
 
@@ -40,7 +39,6 @@ public class EventScript : MonoBehaviour
 
             specialStart = false;
             PlayerPrefs.SetInt("Special Start", 0);
-            Debug.Log("Special Ended");
         }
 
         if (specialAchieved)
@@ -66,7 +64,6 @@ public class EventScript : MonoBehaviour
 
             PlayerPrefs.SetInt("Special Start", 1);
 
-            Debug.Log("Special Started");
         }
     }
 
@@ -81,7 +78,6 @@ public class EventScript : MonoBehaviour
 
             specialStart = false;
             PlayerPrefs.SetInt("Special Start", 0);
-            Debug.Log("Special Ended");
         }
     }
 
@@ -94,7 +90,6 @@ public class EventScript : MonoBehaviour
 
             PlayerPrefs.SetInt("Special Start", 1);
 
-            Debug.Log("Special Started");
         }
     }
 
@@ -109,7 +104,6 @@ public class EventScript : MonoBehaviour
 
             specialStart = false;
             PlayerPrefs.SetInt("Special Start", 0);
-            Debug.Log("Special Ended");
         }
     }
 

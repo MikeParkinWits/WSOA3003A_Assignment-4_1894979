@@ -1842,6 +1842,7 @@ MonoBehaviour:
   - {fileID: 2099498073}
   playerAnimator:
   - {fileID: 0}
+  - {fileID: 0}
   enemyAnimator:
   - {fileID: 0}
   - {fileID: 0}
@@ -1855,6 +1856,7 @@ MonoBehaviour:
   hasStarPos: 0
   eventScript: {fileID: 0}
   specialAllowed: 1
+  coinsAdded: 0
 --- !u!4 &372138391
 Transform:
   m_ObjectHideFlags: 0
